@@ -43,6 +43,9 @@ const AirDropInput: React.FC<Props> = ({ onGenerated }: Props) => {
         <span>原因用途</span>
         <input onChange={onReasonChange} value={reason} />
       </div>
+      <div>
+        (TODO: 标签)
+      </div>
 
       <button onClick={onGenerateClick}>生成</button>
     </div>
