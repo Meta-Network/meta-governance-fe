@@ -19,6 +19,7 @@ const Home: NextPage = () => {
 
         <ul>
           <li><Link href="/invitations/batch"><a>批量生成</a></Link></li>
+          <li><Link href="/invitations/airdrop"><a>批量空投</a></Link></li>
         </ul>
       </main>
     </div>
