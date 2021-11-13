@@ -3,7 +3,7 @@ import httpProxyMiddleware from 'next-http-proxy-middleware'
 
 const handler = (req: NextApiRequest, res: NextApiResponse) => {
   return httpProxyMiddleware(req, res, {
-    target: 'https://meta-governance-api.mttk.net',
+    target: process.env.API_TARGET,
     pathRewrite: [
       {
         patternStr: '^/api/',
