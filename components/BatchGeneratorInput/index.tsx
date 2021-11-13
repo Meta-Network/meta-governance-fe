@@ -30,7 +30,7 @@ const BatchGeneratorInput: React.FC = () => {
     })
     .then(() => fetchHistory())
     .catch(() => alert('生成失败'))
-  }, [applicant, count, reason])
+  }, [applicant, count, reason, fetchHistory])
 
   return (
     <div>

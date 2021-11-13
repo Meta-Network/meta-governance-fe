@@ -35,11 +35,11 @@ const Verification: NextPage = () => {
       <hr />
       <h5>可用</h5>
       <ul>
-        {available.map(item => <li>{item}</li>)}
+        {available.map(item => <li key={item}>{item}</li>)}
       </ul>
       <h5>已被使用</h5>
       <ul>
-        {used.map(item => <li>{item}</li>)}
+        {used.map(item => <li key={item}>{item}</li>)}
       </ul>
     </div>
   )

@@ -1,7 +1,7 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 import httpProxyMiddleware from 'next-http-proxy-middleware'
 
-export default (req: NextApiRequest, res: NextApiResponse) => {
+const handler = (req: NextApiRequest, res: NextApiResponse) => {
   req.headers.authorization = `Bearer ${process.env.MTTK_PROXY_ACCESS_TOKEN}`
 
   return httpProxyMiddleware(req, res, {
@@ -14,3 +14,5 @@ export default (req: NextApiRequest, res: NextApiResponse) => {
     ],
   })
 }
+
+export default handler

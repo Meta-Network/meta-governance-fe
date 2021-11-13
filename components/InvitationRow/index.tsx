@@ -17,7 +17,7 @@ const InvitationRow: React.FC<Props> = ({ invitation, onSelect, onUnselect }: Pr
     } else {
       onUnselect(invitation)
     }
-  }, [onSelect, onUnselect])
+  }, [invitation, onSelect, onUnselect])
 
   const isSelected = Boolean(selectedInvitations.find(selected => selected.signature === invitation.signature))
 

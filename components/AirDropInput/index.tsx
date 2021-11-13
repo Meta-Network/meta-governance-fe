@@ -42,7 +42,7 @@ const AirDropInput: React.FC = () => {
     .then(response => response.json())
     .then(() => fetchHistory())
     .catch(() => alert('空投失败'))
-  }, [applicant, count, reason])
+  }, [applicant, count, reason, type, operator, amount, fetchHistory])
 
   return (
     <div>
