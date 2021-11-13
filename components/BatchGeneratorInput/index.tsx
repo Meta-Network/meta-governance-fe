@@ -1,11 +1,10 @@
 import React, { useCallback, useState } from 'react'
+import useHistory from '../../hooks/useHistory'
 import type { InvitationDto } from '../../types'
 
-interface Props {
-  onGenerated: (invitations: Array<InvitationDto>) => void
-}
+const BatchGeneratorInput: React.FC = () => {
+  const { fetchHistory } = useHistory()
 
-const BatchGeneratorInput: React.FC<Props> = ({ onGenerated }: Props) => {
   const [applicant, setApplicant] = useState('')
   const [count, setCount] = useState(0)
   const [reason, setReason] = useState('')
@@ -21,15 +20,16 @@ const BatchGeneratorInput: React.FC<Props> = ({ onGenerated }: Props) => {
   }, [setReason])
 
   const onGenerateClick = useCallback(() => {
-    fetch('/api/invitations/batch-generate', {
+    fetch('/api/invitations/generate', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify({ count, applicant, reason }),
+      credentials: 'include',
     })
-    .then(response => response.json())
-    .then(response => onGenerated(response))
+    .then(() => fetchHistory())
+    .catch(() => alert('生成失败'))
   }, [applicant, count, reason])
 
   return (

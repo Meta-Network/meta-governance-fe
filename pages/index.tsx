@@ -1,7 +1,7 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
 import Link from 'next/link'
-import React, { useCallback } from 'react'
+import React from 'react'
 
 const Home: NextPage = () => {
   return (
@@ -20,6 +20,7 @@ const Home: NextPage = () => {
         <ul>
           <li><Link href="/invitations/batch"><a>批量生成</a></Link></li>
           <li><Link href="/invitations/airdrop"><a>批量空投</a></Link></li>
+          <li><Link href="/invitations/verify"><a>验证</a></Link></li>
         </ul>
       </main>
     </div>

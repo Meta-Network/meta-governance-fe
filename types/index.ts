@@ -1,3 +1,11 @@
+export interface Invitation {
+  signature: string
+  applicant: string
+  reason: string
+  message: string
+  createdAt: Date
+}
+
 export interface InvitationDto {
   id: number
   sub: string
