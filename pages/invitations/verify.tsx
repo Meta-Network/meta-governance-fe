@@ -23,7 +23,8 @@ const Verification: NextPage = () => {
     .then(response => {
       setAvailable(response.data.available)
       setUsed(response.data.used)
-    });
+    })
+    .catch(() => alert('调用失败'));
   }, [input, setAvailable, setUsed]);
 
   return (
