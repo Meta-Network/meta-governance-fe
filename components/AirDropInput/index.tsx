@@ -76,9 +76,9 @@ const AirDropInput: React.FC = () => {
               <option value="lt">小于</option>
               <option value="lte">小于等于</option>
             </select>
+            <span>{type !== 'DEVELOPER' ? '数量' : '用户 ID'}</span>
+            <input type="number" value={amount} onChange={onAmountChange} />
           </>)}
-        <span>{type !== 'DEVELOPER' ? '数量' : '用户 ID'}</span>
-        <input type="number" value={amount} onChange={onAmountChange} />
       </div>
 
       <button onClick={onGenerateClick}>生成</button>
