@@ -44,6 +44,8 @@ const AirDropInput: React.FC = () => {
     .catch(() => alert('空投失败'))
   }, [applicant, count, reason, type, operator, amount, fetchHistory])
 
+  const displayCondition = !['fanticket', 'DEVELOPER'].includes(type)
+
   return (
     <div>
       <div>
@@ -64,7 +66,7 @@ const AirDropInput: React.FC = () => {
           <option value="follower">粉丝</option>
           <option value="DEVELOPER">指定用户</option>
         </select>
-        {type !== 'DEVELOPER' && (
+        {displayCondition && (
           <>
             <span>运算符</span>
             <select value={operator} onChange={onOperatorChange}>
